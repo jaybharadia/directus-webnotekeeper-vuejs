@@ -3,7 +3,7 @@
     "version": "1.0",
     "manifest_version": 3,
     "author": "Jay Bharadia",
-    "description": "Directus WebNote Keeper for capturing urls and store in directus.",
+    "description": "Directus WebNote Keeper for storing notes in directus.",
     "icons": {
         "16": "icon.png",
         "32": "icon.png",

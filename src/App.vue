@@ -1,10 +1,51 @@
 <template>
-    <div>
-        HELLO
-        {{ notes }}
+    <div
+        style="
+            width: 320px;
+            border-radius: 24px;
+            border: 1px solid gray;
+            padding: 24px;
+        "
+    >
+        <h2 style="text-align: center">✍️ Directus Notes</h2>
+        <div style="text-align: right">
+            <button>Add New</button>
+        </div>
 
-        <button @click="getNotes()">Get Notes</button>
-        <button @click="getToken()">Get Token</button>
+        <!-- <button @click="getNotes()">Get Notes</button> -->
+
+        <!-- Notes List  -->
+
+        <div style="margin-top: 16px">
+            <div
+                style="
+                    background: #222;
+                    padding: 16px;
+                    border-radius: 24px;
+                    border: 2px solid gray;
+                "
+            >
+                <h3>
+                    Website :
+                    <a href="https://directus.io">https://directus.io </a>
+                </h3>
+                <p>Directus is a headless CMS system</p>
+            </div>
+        </div>
+        <!-- Enter Notes -->
+        <!-- <div style="display: flex'; flex-direction: column;">
+            <textarea
+                rows="10"
+                placeholder="Notes are great way to store helpful information to access later. Get Started..."
+            ></textarea>
+            <button style="margin-top: 16px">👍 Done</button>
+        </div> -->
+
+        <!-- <button>Login</button> -->
+
+        <!-- <button @click="getToken()">Get Token</button> -->
+
+        <div></div>
     </div>
 </template>
 
