@@ -4,121 +4,27 @@
             width: 320px;
             border-radius: 24px;
             border: 1px solid gray;
-            padding: 24px;
+            padding: 16px;
         "
     >
-        <h2 style="text-align: center">✍️ Directus Notes</h2>
-        <div style="text-align: right">
-            <button>Add New</button>
-        </div>
-
-        <!-- <button @click="getNotes()">Get Notes</button> -->
-
-        <!-- Notes List  -->
-
-        <div style="margin-top: 16px">
-            <div
-                style="
-                    background: #222;
-                    padding: 16px;
-                    border-radius: 24px;
-                    border: 2px solid gray;
-                "
-            >
-                <h3>
-                    Website :
-                    <a href="https://directus.io">https://directus.io </a>
-                </h3>
-                <p>Directus is a headless CMS system</p>
+        <div
+            style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            "
+        >
+            <div style="font-size: 24px; font-weight: bold">
+                ✍️ Directus Notes
             </div>
         </div>
-        <!-- Enter Notes -->
-        <!-- <div style="display: flex'; flex-direction: column;">
-            <textarea
-                rows="10"
-                placeholder="Notes are great way to store helpful information to access later. Get Started..."
-            ></textarea>
-            <button style="margin-top: 16px">👍 Done</button>
-        </div> -->
 
-        <!-- <button>Login</button> -->
-
-        <!-- <button @click="getToken()">Get Token</button> -->
-
-        <div></div>
+        <RouterView />
     </div>
 </template>
 
 <script>
-import {
-    createDirectus,
-    rest,
-    authentication,
-    login,
-    createUser,
-    readItems,
-} from "@directus/sdk";
-import Cookies from "js-cookie";
-const directus = createDirectus("https://directus-supabase.onrender.com")
-    .with(
-        authentication("cookie", {
-            credentials: "include",
-            autoRefresh: true,
-            storage: {
-                get() {
-                    if (Cookies.get("directus_auth"))
-                        return JSON.parse(Cookies.get("directus_auth"));
-                    else return null;
-                },
-                set(data) {
-                    console.log("🚀 ~ set ~ data:", data);
-                    Cookies.set("directus_auth", JSON.stringify(data));
-                },
-            },
-        })
-    )
-    .with(rest());
-
-export default {
-    data() {
-        return {
-            notes: null,
-        };
-    },
-    created() {
-        this.init();
-    },
-    methods: {
-        async init() {
-            const token = await directus.getToken();
-            console.log("🚀 ~ init ~ token:", token);
-            if (!token)
-                await directus.login("jay.p.bharadia@gmail.com", "Dev@7$pan");
-
-            this.getNotes();
-        },
-        async getNotes() {
-            this.notes = await directus.request(readItems("notes"));
-            console.log("🚀 ~ testing:", this.notes);
-        },
-        getToken() {
-            console.log("getToken", directus.getToken());
-        },
-    },
-};
-
-// console.log("🚀 ~ auth:", auth);
-
-// const result = await directus.request(
-//     createUser({
-//         first_name: "Testing",
-//         last_name: "beta",
-//         email: "jay.p.bharaida+10000@gmail.com",
-//         password: "1234567890",
-//         role: "1c005600-202d-429c-81bb-452a70aec7e1", // Customer
-//     })
-// );
-// console.log("🚀 ~ result:", result);
+export default {};
 </script>
 
 <style scoped>
