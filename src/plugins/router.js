@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 
 import HomeView from "../views/home.vue";
 import LoginView from "../views/login.vue";
+import SignupView from "../views/signup.vue";
 import Upsert from "../views/upsert.vue";
 import { inject } from "vue";
 const routes = [
@@ -18,6 +19,12 @@ const routes = [
         name: "login",
         meta: { public: true },
         component: LoginView,
+    },
+    {
+        path: "/signup",
+        name: "signup",
+        meta: { public: true },
+        component: SignupView,
     },
 ];
 

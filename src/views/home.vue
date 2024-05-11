@@ -44,7 +44,16 @@
                         {{ note.note }}
                     </div>
                 </div>
-
+                <button
+                    @click="
+                        $router.push({
+                            name: 'upsert',
+                            params: { id: note.id },
+                        })
+                    "
+                >
+                    📝
+                </button>
                 <button @click="remove(note.id)">🗑️</button>
             </li>
         </div>
@@ -64,7 +73,6 @@ export default {
         };
     },
     created() {
-        console.log("inside home page");
         this.getNotes();
     },
     methods: {

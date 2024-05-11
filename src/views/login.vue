@@ -1,15 +1,25 @@
 <template>
-    <form @submit.prevent="login">
-        <label for="email" style="display: block">Email</label>
-        <input type="email" id="email" required v-model="email" />
+    <div>
+        <div style="text-align: right">
+            <span
+                @click="$router.push({ name: 'signup' })"
+                style="text-decoration: underline; cursor: pointer"
+            >
+                Signup
+            </span>
+        </div>
+        <form @submit.prevent="login">
+            <label for="email" style="display: block">Email</label>
+            <input type="email" id="email" required v-model="email" />
 
-        <label for="password" style="margin-top: 8px">Password</label>
-        <input type="password" id="password" v-model="password" required />
+            <label for="password" style="margin-top: 8px">Password</label>
+            <input type="password" id="password" v-model="password" required />
 
-        <button type="submit" style="display: block; margin-top: 16px">
-            Login
-        </button>
-    </form>
+            <button type="submit" style="display: block; margin-top: 16px">
+                Login
+            </button>
+        </form>
+    </div>
 </template>
 
 <script>
