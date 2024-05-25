@@ -27,12 +27,9 @@ export default {
     inject: ["directus"],
     data() {
         return {
-            email: "jay.p.bharadia@gmail.com",
-            password: "Dev@7$pan",
+            email: "",
+            password: "",
         };
-    },
-    created() {
-        console.log("inside login vue page");
     },
     methods: {
         async login() {

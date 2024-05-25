@@ -28,9 +28,9 @@ export default {
     inject: ["directus"],
     data() {
         return {
-            name: "jay",
-            email: "jay1234@gmail.com",
-            password: "1234567890",
+            name: "",
+            email: "",
+            password: "",
         };
     },
     methods: {
@@ -45,7 +45,6 @@ export default {
                 })
             );
             this.$router.push({ name: "login" });
-            console.log("🚀 ~ result:", result);
         },
     },
 };

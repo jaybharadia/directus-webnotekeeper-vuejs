@@ -13,7 +13,6 @@ const directus = createDirectus("https://directus-supabase.onrender.com")
                     else return null;
                 },
                 set(data) {
-                    console.log("🚀 ~ set ~ data:", data);
                     Cookies.set("directus_auth", JSON.stringify(data));
                 },
             },
