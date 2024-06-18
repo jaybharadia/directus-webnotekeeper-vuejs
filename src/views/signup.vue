@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { createUser } from "@directus/sdk";
+import { registerUser } from "@directus/sdk";
 export default {
     inject: ["directus"],
     data() {
@@ -31,13 +31,11 @@ export default {
     },
     methods: {
         async signup() {
-            const result = await this.directus.request(
-                createUser({
+            await this.directus.request(
+                registerUser({
                     first_name: this.name,
-                    last_name: "",
                     email: this.email,
                     password: this.password,
-                    role: "1c005600-202d-429c-81bb-452a70aec7e1", // Customer
                 })
             );
             this.$router.push({ name: "login" });
