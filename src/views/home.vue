@@ -1,22 +1,7 @@
 <template>
     <div>
-        <div
-            style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            "
-        >
-            <p
-                @click="logout"
-                style="
-                    text-decoration: underline;
-                    cursor: pointer;
-                    text-align: right;
-                "
-            >
-                Logout
-            </p>
+        <div>
+            <p @click="logout">Logout</p>
 
             <button
                 @click="$router.push({ name: 'upsert', params: { id: '+' } })"
@@ -25,19 +10,8 @@
             </button>
         </div>
         <p v-if="loading">Loading...</p>
-        <div
-            v-else
-            style="background: #222; padding: 16px; border-radius: 24px"
-        >
-            <li
-                v-for="note in notes"
-                :key="`note-${note.id}`"
-                style="
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                "
-            >
+        <div v-else>
+            <li v-for="note in notes" :key="`note-${note.id}`">
                 <div>
                     <a :href="note.website"> {{ note.website }}</a>
                     <div>

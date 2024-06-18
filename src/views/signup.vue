@@ -9,14 +9,10 @@
 
             <label>Password</label>
             <input type="password" v-model="password" required />
-            <button type="submit" style="margin-top: 16px">Signup</button>
+            <button type="submit">Signup</button>
             <p>
                 Already have account?
-                <span
-                    @click="$router.push({ name: 'login' })"
-                    style="text-decoration: underline; cursor: pointer"
-                    >Login</span
-                >
+                <span @click="$router.push({ name: 'login' })">Login</span>
             </p>
         </form>
     </div>

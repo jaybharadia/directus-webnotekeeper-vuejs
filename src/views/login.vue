@@ -1,23 +1,16 @@
 <template>
     <div>
-        <div style="text-align: right">
-            <span
-                @click="$router.push({ name: 'signup' })"
-                style="text-decoration: underline; cursor: pointer"
-            >
-                Signup
-            </span>
+        <div>
+            <span @click="$router.push({ name: 'signup' })"> Signup </span>
         </div>
         <form @submit.prevent="login">
-            <label for="email" style="display: block">Email</label>
+            <label for="email">Email</label>
             <input type="email" id="email" required v-model="email" />
 
-            <label for="password" style="margin-top: 8px">Password</label>
+            <label for="password">Password</label>
             <input type="password" id="password" v-model="password" required />
 
-            <button type="submit" style="display: block; margin-top: 16px">
-                Login
-            </button>
+            <button type="submit">Login</button>
         </form>
     </div>
 </template>
@@ -47,11 +40,3 @@ export default {
     },
 };
 </script>
-
-<style>
-input,
-label {
-    display: block;
-    width: 100%;
-}
-</style>
